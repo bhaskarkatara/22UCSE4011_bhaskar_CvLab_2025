@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Function to load a JPG file (simulating manual reading)
 def load_image(file_path):
     # Simulating manual image reading using matplotlib
     img = plt.imread(file_path)
@@ -9,7 +8,6 @@ def load_image(file_path):
         img = (img * 255).astype(np.uint8)
     return img
 
-# Function to scale an image
 def scale_image(image, scale_factor):
     height, width, channels = image.shape
     new_height, new_width = int(height * scale_factor), int(width * scale_factor)
@@ -24,7 +22,6 @@ def scale_image(image, scale_factor):
 
     return scaled_image
 
-# Function to rotate an image
 def rotate_image(image, angle):
     angle_rad = np.deg2rad(angle)
     cos_theta = np.cos(angle_rad)
@@ -51,7 +48,6 @@ def rotate_image(image, angle):
 
     return rotated_image
 
-# Function to flip an image
 def flip_image(image, mode="horizontal"):
     height, width, channels = image.shape
     flipped_image = np.zeros_like(image)
@@ -71,7 +67,6 @@ def save_image(image, file_name):
     plt.imsave(f"{file_name}.jpg", image)
    
 def main():
-    # Load the image
     image = load_image("Experiment_2_CvLab/img.jpeg")
     plt.imshow(image)
     plt.title("Original Image")
